@@ -189,6 +189,10 @@ Game controller
 			});
 			
 			$(document).keydown(function (e) {
+				if (!self.snake)
+				{
+					return;
+				}
 				self.snake.changeDirection(e.keyCode);	
 			});
 		}

@@ -281,7 +281,6 @@ Leaderboard model
 			
 			if (serializedScores)
 			{
-				console.log("There are high scores");	
 				scoresArray = JSON.parse(serializedScores);	
 			}
 			
@@ -531,6 +530,10 @@ Game controller
 			});
 			
 			$(document).keydown(function (e) {
+				if (!self.snake)
+				{
+					return;
+				}
 				self.snake.changeDirection(e.keyCode);	
 			});
 		}
